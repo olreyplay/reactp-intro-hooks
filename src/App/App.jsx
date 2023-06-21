@@ -1,11 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import "../index.css";
 
 const App = () => {
+  const [value, setValue] = useState(100);
+
+  const handleClick = () => {
+    setValue(value + 1);
+  };
+
   return (
     <div>
-      <p>You clicked ___ times</p>
-      <button>Click me</button>
+      <p>You clicked {value} times</p>
+      <button onClick={handleClick}>Increment</button>
     </div>
   );
 };
